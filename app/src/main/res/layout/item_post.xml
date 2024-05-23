@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imv_profile_pic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/child"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/unblast"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/imv_profile_pic"
+        app:layout_constraintTop_toTopOf="@id/imv_profile_pic" />
+
+    <TextView
+        android:id="@+id/tv_post_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/_2_hrs"
+        app:layout_constraintStart_toStartOf="@id/tv_profile_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_profile_name" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_earth"
+        app:layout_constraintBottom_toBottomOf="@id/tv_post_time"
+        app:layout_constraintStart_toEndOf="@id/tv_post_time"
+        app:layout_constraintTop_toTopOf="@id/tv_post_time" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_profile_name" />
+
+    <TextView
+        android:id="@+id/tv_post_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:autoLink="web"
+        android:text="@string/buckle_up_because_change_is_coming_to_wordpress_http_unblast_com_color_schemes"
+        android:textColor="@color/text_color"
+        android:textColorLink="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imv_profile_pic" />
+
+    <ImageView
+        android:id="@+id/imv_post_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/child"
+        app:layout_constraintTop_toBottomOf="@id/tv_post_content" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tv_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:text="12"
+        android:textColor="@color/text_color"
+        app:icon="@drawable/like"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        app:iconTint="@android:color/transparent"
+        app:iconTintMode="screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imv_post_photo" />
+
+
+    <ImageView
+        android:id="@+id/imv_dop_down"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/ic_drop_down_mennu"
+        app:layout_constraintBottom_toBottomOf="@id/tv_share_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_share_count"
+
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imv_profile_chooser"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/child"
+        app:layout_constraintBottom_toBottomOf="@id/tv_share_count"
+        app:layout_constraintEnd_toStartOf="@id/imv_dop_down"
+        app:layout_constraintTop_toTopOf="@id/imv_dop_down" />
+
+    <TextView
+        android:id="@+id/tv_share_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/_1_share"
+        app:layout_constraintEnd_toStartOf="@id/imv_profile_chooser"
+        app:layout_constraintTop_toBottomOf="@id/imv_post_photo" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_transparent"
+        app:layout_constraintTop_toBottomOf="@id/tv_like_count" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/separator">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/like"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            app:icon="@drawable/ic_like_action"
+            app:iconSize="26dp"
+            app:iconTint="@android:color/transparent"
+            app:iconTintMode="screen"
+            android:textSize="16sp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comment"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            app:icon="@drawable/chat"
+            app:iconSize="26dp"
+            app:iconTint="@android:color/transparent"
+            app:iconTintMode="screen"
+            android:textSize="16sp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share"
+            android:background="@android:color/transparent"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            app:icon="@drawable/ic_share"
+            app:iconSize="26dp"
+            android:layout_weight="1"
+            app:iconTint="@android:color/transparent"
+            app:iconTintMode="screen"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
